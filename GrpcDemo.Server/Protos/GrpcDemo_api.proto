@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDemo.Protos";
+
+package GrpcDemoApi;
+
+// The greeting service definition.
+service GrpcDemoApiProvider {
+  // Sends a greeting
+  rpc Search (GrpcDemoSearchRequest) returns (GrpcDemoSearchResult);
+}
+
+// The request message containing the user's name.
+message GrpcDemoSearchRequest {
+  string text = 1;
+}
+
+// The response message containing the greetings.
+message GrpcDemoSearchResult {
+  repeated GrpcDemoSearchItem items = 1;
+}
+
+  message GrpcDemoSearchItem {
+		  string value = 1;
+		  string url = 2;
+		  string label= 3;
+		  string assetclass = 4;
+	}
